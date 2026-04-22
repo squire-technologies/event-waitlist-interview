@@ -2,7 +2,7 @@
 
 ## Overview
 
-A 90-minute technical interview in two parts, conducted on the same codebase. Candidates build core functionality by hand in Part 1, then extend it with AI tools in Part 2. This format evaluates raw engineering ability and modern AI-assisted development skills side-by-side.
+A 90-minute technical challenge in two parts, conducted on the same codebase. You'll build core functionality by hand in Part 1, then extend it with AI tools in Part 2.
 
 | Section | Duration | AI Tools |
 | --- | --- | --- |
@@ -11,8 +11,6 @@ A 90-minute technical interview in two parts, conducted on the same codebase. Ca
 | Part 2 — Extend with AI | 40 min | ✅ Anything goes |
 
 **Tech stack:** React + TypeScript (Vite) frontend, Node + Express + TypeScript backend. In-memory data (no database setup required).
-
-**Interviewer?** See [INTERVIEWER.md](INTERVIEWER.md) for the full guide — evaluation criteria, probing questions, scoring rubric, and customization notes.
 
 ---
 
@@ -88,7 +86,7 @@ Work across both the backend and frontend.
 
 ## Part 2 — Extend with AI (40 min, AI allowed)
 
-Turn on whatever AI tools you normally use — Copilot, Claude, ChatGPT, Cursor, anything. Tackle these features in any order — build as many as you can. Don't feel pressured to finish all of them; we care more about how you work than how much you complete.
+Turn on whatever AI tools you normally use — Copilot, Claude, ChatGPT, Cursor, anything. Tackle these features in any order — build as many as you can. Don't feel pressured to finish all of them; depth matters more than breadth.
 
 1. **Real-time updates** — When someone joins or leaves from any browser tab, all connected clients should update without refreshing. (SSE or WebSockets)
 2. **Notification preferences** — Users can choose how they want to be notified when promoted from the waitlist: in-app toast, email (just log to console), or none.

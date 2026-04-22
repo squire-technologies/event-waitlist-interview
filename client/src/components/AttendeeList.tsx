@@ -21,10 +21,6 @@ export function AttendeeList({ attendees, title, emptyMessage }: AttendeeListPro
                 <br />
                 <span className="attendee-email">{user.email}</span>
               </div>
-              {/* 
-                NOTE: There is no "Leave" button yet.
-                Candidates will add this functionality.
-              */}
             </li>
           ))}
         </ul>

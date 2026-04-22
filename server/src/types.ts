@@ -11,7 +11,6 @@ export interface Event {
   date: string;
   maxCapacity: number;
   attendees: User[];
-  // NOTE: There is no waitlist yet — candidates will implement this
 }
 
 export interface ApiResponse<T = unknown> {
