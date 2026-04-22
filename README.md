@@ -8,7 +8,7 @@ A 90-minute technical challenge in two parts, conducted on the same codebase. Yo
 | --- | --- | --- |
 | Part 1 — Build the Foundations | 40 min | ❌ Not allowed |
 | Break | 5–10 min | — |
-| Part 2 — Extend with AI | 40 min | ✅ Anything goes |
+| Part 2 — Extend with AI | 40 min | ✅ Agentic tool required |
 
 **Tech stack:** React + TypeScript (Vite) frontend, Node + Express + TypeScript backend. In-memory data (no database setup required).
 
@@ -16,9 +16,9 @@ A 90-minute technical challenge in two parts, conducted on the same codebase. Yo
 
 ## The App
 
-This is a simple event page. Users can join a workshop event, and there's a list of attendees. The event has a **max capacity of 5** (kept small for easy testing).
+This is an **admin panel** for managing event attendance. An admin can select any user from a dropdown and add them to an event. The event has a **max capacity of 5** (kept small for easy testing).
 
-Right now, the app has a bug: **there is no capacity enforcement**. You can add unlimited users and the app won't stop you. There's also no way to leave an event once you've joined.
+Right now, the app has a bug: **there is no capacity enforcement**. You can add unlimited users and the app won't stop you. There's also no way to remove someone once they've been added.
 
 ### Setup
 
@@ -76,19 +76,21 @@ npm run dev:client   # React app on http://localhost:5173
 The event has a max capacity of 5 people. Your task is to build a waitlist system:
 
 1. **Capacity enforcement** — When the event is full, new users should not be added as attendees.
-2. **Waitlist** — Users who try to join a full event are added to a waitlist instead.
-3. **Leave** — Any attendee can leave the event. When they do, the first person on the waitlist is automatically promoted to attendee.
+2. **Waitlist** — When the event is full, users are added to a waitlist instead.
+3. **Remove** — The admin can remove any attendee. When they do, the first person on the waitlist is automatically promoted to attendee.
 4. **UI** — The interface should show attendees and waitlisted users separately. Waitlisted users should see their position in line.
 
 Work across both the backend and frontend.
 
 ---
 
-## Part 2 — Extend with AI (40 min, AI allowed)
+## Part 2 — Extend with AI (40 min, AI tools required)
 
-Turn on whatever AI tools you normally use — Copilot, Claude, ChatGPT, Cursor, anything. Tackle these features in any order — build as many as you can. Don't feel pressured to finish all of them; depth matters more than breadth.
+Use an agentic coding tool — Claude Code, Cursor, or similar. Tackle these features in any order — build as many as you can. Don't feel pressured to finish all of them; depth matters more than breadth.
 
-1. **Real-time updates** — When someone joins or leaves from any browser tab, all connected clients should update without refreshing. (SSE or WebSockets)
-2. **Notification preferences** — Users can choose how they want to be notified when promoted from the waitlist: in-app toast, email (just log to console), or none.
-3. **Quiet hours** — Users can set a do-not-disturb window (e.g., 10pm–8am). Promotions during quiet hours are queued and delivered when the window ends.
-4. **Admin panel** — A separate view where an admin can see all events, manually reorder the waitlist, or force-remove attendees.
+The admin panel you built in Part 1 manages attendance and the waitlist. Now extend it:
+
+1. **Real-time updates** — Open the admin page in two browser windows side by side. When you make a change in one window (add a user, remove an attendee), the other window should update automatically without refreshing.
+2. **Notification preferences** — Add a per-user setting (toast, email, or none) that controls what happens when that user gets promoted from the waitlist. "Toast" shows a notification banner on the admin page, "email" logs to the server console, "none" does nothing.
+3. **Quiet hours** — Add a per-user do-not-disturb window (e.g., 10pm–8am). If a user would be promoted during their quiet hours, the promotion is held and applied when the window ends. Show the pending state in the UI.
+4. **Waitlist management** — The admin can manually reorder the waitlist (e.g., drag-and-drop or move up/down buttons) and force-remove attendees or waitlisted users.
