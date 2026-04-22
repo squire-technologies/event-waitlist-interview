@@ -20,8 +20,6 @@ export const users: User[] = [
   { id: "u15", name: "Oscar Ruiz", email: "oscar@example.com" },
 ];
 
-// A single event with a deliberately small capacity to make the waitlist
-// mechanics easy to test during the interview.
 export const events: Event[] = [
   {
     id: "evt-1",

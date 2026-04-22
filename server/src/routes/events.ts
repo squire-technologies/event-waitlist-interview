@@ -19,7 +19,6 @@ router.get("/:id", (req: Request, res: Response<ApiResponse<Event>>) => {
 });
 
 // POST /api/events/:id/join — add a user to the event
-// ⚠️  BUG: No capacity check! Candidates need to fix this.
 router.post("/:id/join", (req: Request, res: Response<ApiResponse<Event>>) => {
   const event = events.find((e) => e.id === req.params.id);
   if (!event) {
@@ -32,7 +31,6 @@ router.post("/:id/join", (req: Request, res: Response<ApiResponse<Event>>) => {
     return res.status(404).json({ success: false, error: "User not found" });
   }
 
-  // No duplicate check either — candidates may notice and fix this
   const alreadyJoined = event.attendees.some((a) => a.id === userId);
   if (alreadyJoined) {
     return res
@@ -40,7 +38,6 @@ router.post("/:id/join", (req: Request, res: Response<ApiResponse<Event>>) => {
       .json({ success: false, error: "User already joined" });
   }
 
-  // Just push onto attendees — no capacity enforcement
   event.attendees.push(user);
 
   res.json({ success: true, data: event });

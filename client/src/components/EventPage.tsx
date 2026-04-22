@@ -45,12 +45,6 @@ export function EventPage({ eventId }: EventPageProps) {
         title="Attendees"
         emptyMessage="No one has joined yet. Be the first!"
       />
-
-      {/*
-        TODO (Candidate): Add a waitlist section here.
-        When the event is full, users who try to join should
-        be added to a waitlist and shown below with their position.
-      */}
     </div>
   );
 }
